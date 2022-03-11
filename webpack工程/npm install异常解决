@@ -1,0 +1,28 @@
+#### 问题
+
+操作系统：win10
+
+node：v16.13.0
+
+npm：8.1.3
+
+**错误提示：**
+
+```
+npm ERR! code ETARGET
+npm ERR! notarget No matching version found for echarts@4.6.0
+npm ERR! notarget In most cases you or one of your dependencies are requesting
+npm ERR! notarget a package version that doesn't exist.
+```
+
+### 分析
+
+1. 看问题应该是因为版本问题， 去npm官网确认， 此版本是存在的。
+2. 查看lock文件， 安装地址不是标准地址。 `wget ${下载地址}`， 下载成功说明镜像是没有问题的。
+3. 尝试移除lock文件后， 重新安装其他库出现相同错误提示。观察相似之处， 两个库都是最新版本。
+4. `npm install npm@latest -g`更新npm为最新版本， 重新安装依然失败。
+5. `npm config get registry`发现是公司内部镜像， 更新镜像， 重新安装成功。
+
+### 最后解决方案
+
+修改npm 镜像`npm config set registry https://registry.npmjs.org`

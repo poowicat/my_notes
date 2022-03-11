@@ -1,0 +1,23 @@
+YOUR-FILE-WITH-SENSITIVE-DATA
+# 忽略根目录下bin文件夹中的所有文件
+# /bin/*
+
+# 忽略所有文件
+# /*
+
+# 忽略所有.class文件
+#*.class
+
+# 不要忽略根目录下bin文件夹中的.md文件
+!/bin/*.md
+
+# 忽略.pdf文件
+*.pdf
+
+# 忽略文件夹中的所有文件
+/PyTorch/data/
+/PyTorch/.history/
+/PyTorch/.vscode/
+/深入浅出机器学习/.vscode/
+/深入浅出机器学习/.history/
+/PyTorch/data/?cifar-10-python.tar.gz
